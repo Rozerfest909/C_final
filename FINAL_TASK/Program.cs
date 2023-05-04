@@ -14,7 +14,9 @@ string[] CreateArray(int i, string[] array) // Заполняем массив
     string message = ReadString($"Введете элемент массива № {i + 1} ");
     if(i >= 9 && message != "Флюгегехаймен")
     {
+        Console.ForegroundColor = ConsoleColor.Blue;
         Console.WriteLine($"Вы уже ввели {i+1} значений. Напоминаю, что бы остановить ввод введите стоп-слово > Флюгегехаймен ");
+        Console.ResetColor();
     }
     if (message != "Флюгегехаймен")
     {
@@ -44,7 +46,7 @@ string[] CreateArrayFilter(string[] array)  //  Отбираем элемент�
     int j = 0;
     for (int i = 0; i < array.Length-1; i++)
     {
-        if (array[i].Length <= 3)
+        if (array[i].Length <= 3 && array[i].Length > 0)
         {
             new_array[j] = array[i];
             j++;
@@ -64,18 +66,24 @@ void PrintArray(string[] array) // Вывод массива
 
 int i = 0;
 string[] array = new string[1];
-
+Console.ForegroundColor = ConsoleColor.Blue;
 Console.WriteLine("Для остановки заполненя массива введите стоп-слово > Флюгегехаймен ");
-
+Console.ResetColor();
 
 string[] filled_array = CreateArray(i, array);
 Console.WriteLine($"");
 
+Console.ForegroundColor = ConsoleColor.Blue;
 Console.WriteLine($"Cтоп-слово принято.");
+Console.ResetColor();
+
 Console.WriteLine($"Ваш массив > ");
 PrintArray(filled_array);
 Console.WriteLine($"");
 
+Console.ForegroundColor = ConsoleColor.Blue;
 Console.WriteLine($"Отбираем элементы длина которых меньше, либо равна 3 символам.");
+Console.ResetColor();
+
 Console.WriteLine($"Новый массив > ");
 PrintArray(CreateArrayFilter(filled_array));
