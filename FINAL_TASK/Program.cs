@@ -61,6 +61,7 @@ void PrintArray(string[] array) // Вывод массива
 
 int i = 0;
 string[] array = new string[1];
+
 Console.ForegroundColor = ConsoleColor.Blue;
 Console.WriteLine("Для остановки заполнения массива, введите стоп-слово > Флюгегехаймен ");
 Console.ResetColor();

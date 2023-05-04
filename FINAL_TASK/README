@@ -40,5 +40,5 @@
 
         git fetch origin
 
-        git checkout workspace
+        git checkout workspace  
 
