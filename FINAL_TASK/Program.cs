@@ -1,15 +1,10 @@
-﻿// // Задача: Написать программу, которая из имеющегося массива строк формирует новый массив из строк, длина которых меньше, либо равна 3 символам.
-// Первоначальный массив можно ввести с клавиатуры, либо задать на старте выполнения алгоритма.
-// При решении не рекомендуется пользоваться коллекциями, лучше обойтись исключительно массивами.
-
-
-string ReadString(string msg) // Ввод сообщения
+﻿string ReadString(string msg) // Ввод сообщения
 {
     System.Console.Write($"{msg} > ");
     return Console.ReadLine();
 }
 
-string[] CreateArray(int i, string[] array) // Заполняем массив
+string[] CreateArray(int i, string[] array) // Заполнение массива
 {
     string message = ReadString($"Введете элемент массива № {i + 1} ");
     if(i >= 9 && message != "Флюгегехаймен")
@@ -30,7 +25,7 @@ string[] CreateArray(int i, string[] array) // Заполняем массив
     }
 }
 
-string[] CopyArray(string[] array) // Увеличиваем размер массива на 1 слот (методом копирования)
+string[] CopyArray(string[] array) // Увеличение размера массива на 1 слот (методом копирования)
 {
     string[] new_array = new string[array.Length + 1];
     for (int i = 0; i < array.Length; i++)
@@ -40,7 +35,7 @@ string[] CopyArray(string[] array) // Увеличиваем размер мас
     return new_array;
 }
 
-string[] CreateArrayFilter(string[] array)  //  Отбираем элементы, длина которых меньше, либо равна 3 символам.
+string[] CreateArrayFilter(string[] array)  //  Отбор элементов, длина которых меньше, либо равна 3 символам.
 {
     string[] new_array = new string[array.Length];
     int j = 0;
@@ -67,7 +62,7 @@ void PrintArray(string[] array) // Вывод массива
 int i = 0;
 string[] array = new string[1];
 Console.ForegroundColor = ConsoleColor.Blue;
-Console.WriteLine("Для остановки заполненя массива введите стоп-слово > Флюгегехаймен ");
+Console.WriteLine("Для остановки заполнения массива, введите стоп-слово > Флюгегехаймен ");
 Console.ResetColor();
 
 string[] filled_array = CreateArray(i, array);
