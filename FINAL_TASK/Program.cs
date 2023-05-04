@@ -12,12 +12,14 @@ string ReadString(string msg) // Ввод сообщения
 string[] CreateArray(int i, string[] array) // Заполняем массив
 {
     string message = ReadString($"Введете элемент массива № {i + 1} ");
-
-    if (message != "1")
+    if(i >= 9 && message != "Флюгегехаймен")
+    {
+        Console.WriteLine($"Вы уже ввели {i+1} значений. Напоминаю, что бы остановить ввод введите стоп-слово > Флюгегехаймен ");
+    }
+    if (message != "Флюгегехаймен")
     {
         array[i] = message;
         i++;
-        // PrintArray(array);
         return CreateArray(i, CopyArray(array));
     }
     else
@@ -46,7 +48,6 @@ string[] CreateArrayFilter(string[] array)  //  Отбираем элемент�
         {
             new_array[j] = array[i];
             j++;
-            // PrintArray(new_array);
         }
     }
     return new_array;
@@ -62,9 +63,19 @@ void PrintArray(string[] array) // Вывод массива
 }
 
 int i = 0;
-
 string[] array = new string[1];
-string[] filled_array = CreateArray(i, array);
-PrintArray(filled_array);
 
+Console.WriteLine("Для остановки заполненя массива введите стоп-слово > Флюгегехаймен ");
+
+
+string[] filled_array = CreateArray(i, array);
+Console.WriteLine($"");
+
+Console.WriteLine($"Cтоп-слово принято.");
+Console.WriteLine($"Ваш массив > ");
+PrintArray(filled_array);
+Console.WriteLine($"");
+
+Console.WriteLine($"Отбираем элементы длина которых меньше, либо равна 3 символам.");
+Console.WriteLine($"Новый массив > ");
 PrintArray(CreateArrayFilter(filled_array));
